@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  aws-eks-asg-rolling-update-handler:
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2021-05-18T21:08:57.381833881Z"
+    description: Handles rolling upgrades for AWS ASGs for EKS by replacing outdated
+      nodes by new nodes.
+    digest: d51114cbeec5335710b417f1c78ec0ef39d8580bb9c6968c15ac3df347d1aba6
+    home: https://github.com/TwinProduction/aws-eks-asg-rolling-update-handler
+    maintainers:
+    - name: TwinProduction
+    name: aws-eks-asg-rolling-update-handler
+    urls:
+    - https://github.com/TwinProduction/helm-charts/releases/download/aws-eks-asg-rolling-update-handler-1.1.0/aws-eks-asg-rolling-update-handler-1.1.0.tgz
+    version: 1.1.0
+generated: "2021-05-18T21:08:57.381840881Z"
