@@ -9,5 +9,5 @@ helm repo list
 ## Update and show charts
 ```sh
 helm repo update
-helm search -l TwinProduction/
+helm search repo TwinProduction
 ```
