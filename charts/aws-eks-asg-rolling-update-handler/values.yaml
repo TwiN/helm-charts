@@ -25,3 +25,4 @@ environmentVars:
 serviceAccount:
   create: true
   #name: aws-eks-asg-rolling-update-handler
+  annotations: {}
