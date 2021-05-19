@@ -2,15 +2,17 @@ replicaCount: 1
 
 image:
   repository: twinproduction/aws-eks-asg-rolling-update-handler
-  tag: v1.1.0
+  tag: v1.2.0
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
 #- imagePullSecret
 
 environmentVars:
-- name: AUTO_SCALING_GROUP_NAMES
-  value: "asg-1,asg-2,asg-3" # REPLACE THESE VALUES FOR THE NAMES OF THE ASGs
+  - name: CLUSTER_NAME
+    value: "cluster-name" # REPLACE THIS WITH THE NAME OF YOUR EKS CLUSTER
+#- name: AUTO_SCALING_GROUP_NAMES
+#  value: "asg-1,asg-2,asg-3" # REPLACE THESE VALUES FOR THE NAMES OF THE ASGs, if CLUSTER_NAME is provided, this is ignored
 #- name: IGNORE_DAEMON_SETS
 #  value: "true"
 #- name: DELETE_LOCAL_DATA
