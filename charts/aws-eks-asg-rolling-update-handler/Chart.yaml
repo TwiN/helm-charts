@@ -5,4 +5,4 @@ home: https://github.com/TwinProduction/aws-eks-asg-rolling-update-handler
 maintainers:
   - name: TwinProduction
 name: aws-eks-asg-rolling-update-handler
-version: 1.2.0
+version: 1.2.1
