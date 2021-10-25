@@ -67,6 +67,17 @@ entries:
     version: 1.1.0
   gatus:
   - apiVersion: v2
+    created: "2021-10-25T00:43:38.946142383Z"
+    description: Deploys a Gatus instance
+    digest: 471f589a31b0685beb1b799c23b823714829507276a802b9d008354347a70693
+    home: https://github.com/TwiN/gatus
+    maintainers:
+    - name: TwiN
+    name: gatus
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/gatus-0.0.2/gatus-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2021-10-25T00:41:56.134310687Z"
     description: Deploys a Gatus instance
     digest: 3f009eab89f6b8036bf302203dfb087131108a32bf6beabea2966fb4dbc3a826
@@ -77,4 +88,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/gatus-0.0.1/gatus-0.0.1.tgz
     version: 0.0.1
-generated: "2021-10-25T00:41:56.135009612Z"
+generated: "2021-10-25T00:43:38.946484587Z"
