@@ -65,4 +65,16 @@ entries:
     urls:
     - https://github.com/TwinProduction/helm-charts/releases/download/aws-eks-asg-rolling-update-handler-1.1.0/aws-eks-asg-rolling-update-handler-1.1.0.tgz
     version: 1.1.0
-generated: "2021-10-08T02:57:31.149699369Z"
+  gatus:
+  - apiVersion: v2
+    created: "2021-10-25T00:41:56.134310687Z"
+    description: Deploys a Gatus instance
+    digest: 3f009eab89f6b8036bf302203dfb087131108a32bf6beabea2966fb4dbc3a826
+    home: https://github.com/TwiN/gatus
+    maintainers:
+    - name: TwiN
+    name: gatus
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/gatus-0.0.1/gatus-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-10-25T00:41:56.135009612Z"
