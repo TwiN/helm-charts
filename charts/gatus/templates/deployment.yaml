@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "gatus.fullname" . }}
+  labels: {{- include "gatus.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels: {{- include "gatus.labels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ template "gatus.fullname" . }}
+      labels: {{- include "gatus.labels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      terminationGracePeriodSeconds: 5
+      containers:
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: gatus
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 250m
+              memory: 100M
+            requests:
+              cpu: 50m
+              memory: 30M
+          volumeMounts:
+            - mountPath: /config
+              name: config
+      volumes:
+        - configMap:
+            name: {{ template "gatus.fullname" . }}
+          name: config

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: gatus
+version: 0.0.1
+description: Deploys a Gatus instance
+home: https://github.com/TwiN/gatus
+maintainers:
+  - name: TwiN
