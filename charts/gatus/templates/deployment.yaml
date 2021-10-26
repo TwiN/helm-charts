@@ -6,7 +6,7 @@ metadata:
 spec:
   replicas: {{ .Values.replicas }}
   selector:
-    matchLabels: {{- include "gatus.labels" . | nindent 6 }}
+    matchLabels: {{- include "gatus.matchLabels" . | nindent 6 }}
   template:
     metadata:
       name: {{ template "gatus.fullname" . }}

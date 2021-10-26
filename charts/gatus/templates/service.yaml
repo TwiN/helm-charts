@@ -9,4 +9,4 @@ spec:
       port: 8080
       protocol: TCP
       targetPort: 8080
-  selector: {{- include "gatus.labels" . | nindent 4 }}
+  selector: {{- include "gatus.matchLabels" . | nindent 4 }}

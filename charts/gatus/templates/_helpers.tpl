@@ -28,3 +28,9 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version }}
 {{- end -}}
+
+{{/* Match labels */}}
+{{- define "gatus.matchLabels" -}}
+app.kubernetes.io/name: {{ include "gatus.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
