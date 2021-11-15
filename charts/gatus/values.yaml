@@ -2,7 +2,7 @@ replicas: 1
 
 image:
   repository: twinproduction/gatus
-  tag: v3.3.1
+  tag: v3.3.3
   pullPolicy: IfNotPresent
 
 ingress:
@@ -12,11 +12,15 @@ ingress:
   #ingressClassName: nginx
   # Values can be templated
   annotations: {}
-    #kubernetes.io/ingress.class: nginx
+  #  kubernetes.io/ingress.class: nginx
   labels: {}
   path: /
   hosts:
     - chart-example.local
+  tls: []
+  #  - secretName: chart-example.local-tls
+  #    hosts:
+  #      - chart-example.local
 
 serviceAccount:
   create: true

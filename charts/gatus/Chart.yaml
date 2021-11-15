@@ -1,6 +1,6 @@
 apiVersion: v2
 name: gatus
-version: 0.0.4
+version: 0.0.5
 description: Deploys a Gatus instance
 home: https://github.com/TwiN/gatus
 maintainers:
