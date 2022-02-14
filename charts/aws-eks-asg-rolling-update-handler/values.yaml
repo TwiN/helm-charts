@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: twinproduction/aws-eks-asg-rolling-update-handler
-  tag: v1.2.1
+  tag: v1.2.2
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
