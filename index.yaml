@@ -2,6 +2,18 @@ apiVersion: v1
 entries:
   aws-eks-asg-rolling-update-handler:
   - apiVersion: v2
+    created: "2022-02-14T18:47:10.506980134Z"
+    description: Handles rolling upgrades for AWS ASGs for EKS by replacing outdated
+      nodes by new nodes.
+    digest: fa58d3dafc45354cdf78dc0df179c6e7c3b5016780354e7ca1ef6bb44792871a
+    home: https://github.com/TwiN/aws-eks-asg-rolling-update-handler
+    maintainers:
+    - name: TwiN
+    name: aws-eks-asg-rolling-update-handler
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/aws-eks-asg-rolling-update-handler-1.2.4/aws-eks-asg-rolling-update-handler-1.2.4.tgz
+    version: 1.2.4
+  - apiVersion: v2
     created: "2021-10-08T02:57:31.149429466Z"
     description: Handles rolling upgrades for AWS ASGs for EKS by replacing outdated
       nodes by new nodes.
@@ -121,4 +133,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/gatus-0.0.1/gatus-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-15T04:59:19.539843879Z"
+generated: "2022-02-14T18:47:10.507127935Z"
