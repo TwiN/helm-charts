@@ -11,5 +11,7 @@ rules:
     resources:
       - "*"
     verbs:
-      - "*"
+      - "get"
+      - "list"
+      - "delete"
 {{ end }}
