@@ -191,6 +191,17 @@ entries:
     version: 0.0.1
   k8s-ttl-controller:
   - apiVersion: v2
+    created: "2022-07-08T02:13:24.220938945Z"
+    description: Annotation-based TTL controller for Kubernetes
+    digest: b3d7975cbb79a700302777fec0367306638ba2c9a5a55b1c5137abc6a60ba070
+    home: https://github.com/TwiN/k8s-ttl-controller
+    maintainers:
+    - name: TwiN
+    name: k8s-ttl-controller
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/k8s-ttl-controller-0.1.2/k8s-ttl-controller-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2022-07-08T01:45:07.486356944Z"
     description: Annotation-based TTL controller for Kubernetes
     digest: 61b79b8b4668f8dd2254f977207c48a338610fafbdfd990dab789ada959d7447
@@ -212,4 +223,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/k8s-ttl-controller-0.1.0/k8s-ttl-controller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-08T01:45:07.486398446Z"
+generated: "2022-07-08T02:13:24.220986946Z"
