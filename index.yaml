@@ -189,4 +189,16 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/gatus-0.0.1/gatus-0.0.1.tgz
     version: 0.0.1
-generated: "2022-05-26T04:04:56.1216376Z"
+  k8s-ttl-controller:
+  - apiVersion: v2
+    created: "2022-07-08T01:30:12.486050499Z"
+    description: Annotation-based TTL controller for Kubernetes
+    digest: 4112d49be5edb9a52422d95cf71a8fd48b2bb7844886bbde7ea8aabf66609f8d
+    home: https://github.com/TwiN/k8s-ttl-controller
+    maintainers:
+    - name: TwiN
+    name: k8s-ttl-controller
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/k8s-ttl-controller-0.1.0/k8s-ttl-controller-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-07-08T01:30:12.486102099Z"
