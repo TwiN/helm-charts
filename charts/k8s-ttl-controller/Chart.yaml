@@ -1,0 +1,7 @@
+apiVersion: v2
+name: k8s-ttl-controller
+version: 0.1.0
+description: Annotation-based TTL controller for Kubernetes
+home: https://github.com/TwiN/k8s-ttl-controller
+maintainers:
+  - name: TwiN

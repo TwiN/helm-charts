@@ -1,0 +1,29 @@
+image:
+  repository: ghcr.io/twin/k8s-ttl-controller
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# By default, a ServiceAccount, ClusterRole and ClusterRoleBinding
+# will be created with complete access. You can however opt to
+# create your own ServiceAccount by setting serviceAccount.create
+# to false, but it is your responsibility to ensure that the name
+# of the ServiceAccount you will create outside of this chart
+# matches the name specified in serviceAccount.name.
+serviceAccount:
+  name: k8s-ttl-controller
+  create: true
+
+# By default, k8s-ttl-controller has access to pretty much everything.
+# This is normal, because it has to look at every resource, check for
+# an annotation, and if said resource is considered to be outdated,
+# it is deleted by the application.
+#
+# It is however possible to prevent k8s-ttl-controller from interacting
+# with certain resources by simply creating a different ClusterRole that
+# does not have the required authorization to list and delete said
+# resources.
+clusterRole:
+  create: true
+
+clusterRoleBinding:
+  create: true
