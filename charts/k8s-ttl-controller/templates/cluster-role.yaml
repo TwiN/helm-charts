@@ -14,4 +14,11 @@ rules:
       - "get"
       - "list"
       - "delete"
+  - apiGroups:
+      - ""
+      - "events.k8s.io"
+    resources:
+      - "events"
+    verbs:
+      - "create"
 {{ end }}

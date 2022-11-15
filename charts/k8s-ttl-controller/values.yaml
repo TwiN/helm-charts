@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/twin/k8s-ttl-controller
-  tag: latest
+  tag: v1.2.0
   pullPolicy: IfNotPresent
 
 # By default, a ServiceAccount, ClusterRole and ClusterRoleBinding
