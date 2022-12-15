@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aws-eks-asg-rolling-update-handler
+  name:  {{ template "aws-eks-asg-rolling-update-handler.name" . }}
   namespace: {{ template "aws-eks-asg-rolling-update-handler.namespace" . }}
   labels:
 {{ include "aws-eks-asg-rolling-update-handler.labels" . | indent 4 }}
