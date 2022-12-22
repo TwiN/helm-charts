@@ -22,6 +22,17 @@ environmentVars:
 #- name: ENVIRONMENT
 #  value: ""
 
+resources: {}
+  # limits:
+    # cpu: 0.3
+    # memory: 100Mi
+  # requests:
+    # cpu: 0.1
+    # memory: 50Mi
+podAnnotations: {}
+  # prometheus.io/port: "8080"
+  # prometheus.io/scrape: "true"
+
 serviceAccount:
   create: true
   #name: aws-eks-asg-rolling-update-handler
