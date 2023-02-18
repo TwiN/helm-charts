@@ -4,7 +4,7 @@ metadata:
   name: {{ template "gatus.fullname" . }}
   labels: {{- include "gatus.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 1
   selector:
     matchLabels: {{- include "gatus.matchLabels" . | nindent 6 }}
   template:
