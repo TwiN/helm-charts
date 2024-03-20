@@ -1,0 +1,25 @@
+image:
+  repository: ghcr.io/twin/lighthouse
+  tag: v0.0.2
+  pullPolicy: IfNotPresent
+
+environmentVars:
+  - name: WEBHOOK_URL
+    value: ""
+
+# By default, a ServiceAccount, ClusterRole and ClusterRoleBinding
+# will be created for the release. You can, however, opt to create
+# your own ServiceAccount by setting serviceAccount.create to
+# false, but it is your responsibility to ensure that the name
+# of the ServiceAccount you will create outside of this chart
+# matches the name specified in serviceAccount.name.
+serviceAccount:
+  name: lighthouse
+  create: true
+
+clusterRole:
+  create: true
+
+clusterRoleBinding:
+  create: true
+

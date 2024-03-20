@@ -1,0 +1,7 @@
+apiVersion: v2
+name: lighthouse
+version: 0.0.1
+description: Standalone monitoring system for your Kubernetes cluster
+home: https://github.com/TwiN/lighthouse
+maintainers:
+  - name: TwiN

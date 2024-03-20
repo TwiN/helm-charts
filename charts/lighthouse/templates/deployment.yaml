@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lighthouse
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: lighthouse
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lighthouse
+  template:
+    metadata:
+      labels:
+        app: lighthouse
+    spec:
+      automountServiceAccountToken: true
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      restartPolicy: Always
+      dnsPolicy: Default
+      containers:
+        - name: lighthouse
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+{{- toYaml .Values.environmentVars | nindent 12 }}
