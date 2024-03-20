@@ -327,4 +327,16 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/k8s-ttl-controller-0.1.0/k8s-ttl-controller-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-09T14:27:32.281403627Z"
+  lighthouse:
+  - apiVersion: v2
+    created: "2024-03-20T00:06:23.190361349Z"
+    description: Standalone monitoring system for your Kubernetes cluster
+    digest: 4a602c7467ddf2eebe5559e7a856f55b0ad98d6b60fdda7aa76bf4e58e45f95f
+    home: https://github.com/TwiN/lighthouse
+    maintainers:
+    - name: TwiN
+    name: lighthouse
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/lighthouse-0.0.1/lighthouse-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-03-20T00:06:23.190436479Z"
