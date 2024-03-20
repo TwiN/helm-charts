@@ -24,4 +24,4 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-{{- toYaml .Values.environmentVars | nindent 12 }}
+{{- toYaml .Values.env | nindent 12 }}
