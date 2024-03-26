@@ -14,3 +14,4 @@ The following table lists the configurable parameters of the aws-eks-asg-rolling
 | podLabels | Labels to add to the aws-eks-asg-rolling-update-handler pod configuration | no | `{}` |
 | securityContext | Pod security context | no | `{}` |
 | containerSecurityContext | Container security context | no | `{}` |
+| podmonitor | Create a PodMonitor | no | `{"create": false, "labels": {}}` |

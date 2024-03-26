@@ -49,3 +49,8 @@ containerSecurityContext: {}
   # capabilities:
   #  drop:
 #    - ALL
+
+podmonitor:
+  create: false
+  labels: {}
+    # prometheus: core

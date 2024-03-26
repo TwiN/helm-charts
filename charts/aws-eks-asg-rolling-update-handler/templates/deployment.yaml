@@ -39,6 +39,14 @@ spec:
           securityContext:
             {{ toYaml .Values.containerSecurityContext | nindent 12 | trim }}
           {{- end }}
+          {{- range .Values.environmentVars }}
+          {{- if eq .name "METRICS_PORT" }}
+          ports:
+            - name: metrics
+              containerPort: {{ .value }}
+              protocol: TCP
+          {{- end }}
+          {{- end }}
           env:
 {{- toYaml .Values.environmentVars | nindent 12 }}
 {{- with .Values.resources }}
