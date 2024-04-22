@@ -23,3 +23,6 @@ spec:
         - name: k8s-ttl-controller
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.resources }}
+          resources: {{ toYaml .Values.resources | nindent12 }}
+          {{- end }}
