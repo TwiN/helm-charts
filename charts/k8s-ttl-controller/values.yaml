@@ -5,7 +5,6 @@ image:
 
 # By default no resource limit and requests will be set. 
 # However you can set this by uncommenting the following configuration.
- 
 # resources:
 #   requests:
 #     cpu: 16m
