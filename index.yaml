@@ -340,6 +340,17 @@ entries:
     version: 0.1.0
   lighthouse:
   - apiVersion: v2
+    created: "2024-05-11T02:23:14.297515927Z"
+    description: Standalone monitoring system for your Kubernetes cluster
+    digest: 7d3008a8a6a05548099aeae0723742a9e9752096a6e45ec9ca7155ae71dd3886
+    home: https://github.com/TwiN/lighthouse
+    maintainers:
+    - name: TwiN
+    name: lighthouse
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/lighthouse-1.0.2/lighthouse-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     created: "2024-03-21T02:09:07.892092542Z"
     description: Standalone monitoring system for your Kubernetes cluster
     digest: 7512ea5c037c42769a59fd5eb32d383541957eab236b784a0b2cdf5507fa78a5
@@ -372,4 +383,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/lighthouse-0.0.1/lighthouse-0.0.1.tgz
     version: 0.0.1
-generated: "2024-04-26T00:18:02.124429344Z"
+generated: "2024-05-11T02:23:14.297732312Z"
