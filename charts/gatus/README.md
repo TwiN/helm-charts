@@ -2,25 +2,12 @@
 
 > Installs the automated service health dashboard [Gatus](https://github.com/TwiN/gatus)
 
+
 ## Get Repo Info
 
 ```console
 helm repo add twin https://twin.github.io/helm-charts
 helm repo update
-```
-
-_See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation._
-
-## Install Chart
-
-```console
-helm install --name [RELEASE_NAME] twin/gatus
-```
-
-_See [configuration](#configuration) below._
-_See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
-
-## Uninstall Chart
 
 ```console
 helm delete --purge [RELEASE_NAME]
