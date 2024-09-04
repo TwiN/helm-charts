@@ -29,19 +29,6 @@ helm delete --purge [RELEASE_NAME]
 This removes all the Kubernetes components associated with the chart and deletes the release.
 _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command documentation._
 
-## Upgrading an existing Release to a new major version
-
-### To 3.0.0
-
-This version bumps Gatus image from 4.4.0 to 5.1.0, so your config from v4 could potentially have incompatibilities with v5.
-Please check corresponding Gatus release changelog: [v5.0.0](https://github.com/TwiN/gatus/releases/tag/v5.0.0) and
-[v5.1.0](https://github.com/TwiN/gatus/releases/tag/v5.1.0).
-
-### To 2.0.0
-
-This version requires Helm >= 3
-Gatus version is upgraded from 2 to 3. Gatus 3 deprecates `memory` type of storage, supports `sqlite` and `postgres`.
-`storage` is not part of `persistence` anymore and is part of `config` now. Check the example below.
 
 ## Configuration
 
