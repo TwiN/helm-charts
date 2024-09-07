@@ -1,12 +1,23 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "gatus.fullname" . }}
-  labels: {{- include "gatus.labels" . | nindent 4 }}
+  name: {{ include "names.fullname" . }}
+  namespace: {{ include "names.namespace" . }}
+  labels:
+    {{- include "labels.baseLabels" . | nindent 4 }}
+{{- if .Values.service.labels }}
+{{ toYaml .Values.service.labels | indent 4 }}
+{{- end }}
+{{- with .Values.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
     - name: http
-      port: 8080
+      port: {{ .Values.service.port }}
+      targetPort: http
       protocol: TCP
-      targetPort: 8080
-  selector: {{- include "gatus.matchLabels" . | nindent 4 }}
+  selector:
+    {{- include "labels.selectorLabels" . | nindent 4 }}
