@@ -93,6 +93,15 @@ ingress:
 # Expects key: value
 env: {}
   # GATUS_CONFIG_PATH: config/config.yaml
+  # SECRET_VAR:
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: gatus-secret
+  #       key: secret
+
+envFrom: []
+  # - secretRef:
+  #     name: gatus-secret
 
 # Sidecar containers in the pod
 sidecarContainers: {}
