@@ -97,7 +97,7 @@ containers:
 volumes:
   - name: {{ include "names.fullname" . }}-config
     configMap:
-      name: {{ include "names.fullname" . }}
+      name: {{ .Values.existingConfigMap | default (include "names.fullname" .) }}
   {{- if .Values.persistence.enabled }}
   - name: {{ include "names.fullname" . }}-data
     persistentVolumeClaim:

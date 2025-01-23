@@ -201,3 +201,6 @@ config:
       conditions:
         - "[STATUS] == 200"
         - "[BODY] == pat(*<h1>Example Domain</h1>*)"
+
+# Name of an existing ConfigMap resource. If set, `config` is ignored.
+existingConfigMap: ""
