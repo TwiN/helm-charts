@@ -14,6 +14,7 @@ metadata:
 {{- end }}
 spec:
   replicas: 1
+  revisionHistoryLimit: {{ .Values.deployment.revisionHistoryLimit }}
   selector:
     matchLabels:
       {{- include "labels.selectorLabels" . | nindent 6 }}
