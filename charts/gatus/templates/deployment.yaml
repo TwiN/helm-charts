@@ -1,54 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "gatus.fullname" . }}
-  labels: {{- include "gatus.labels" . | nindent 4 }}
+  name: {{ include "names.fullname" . }}
+  namespace: {{ include "names.namespace" . }}
+  labels:
+    {{- include "labels.baseLabels" . | nindent 4 }}
+{{- if .Values.labels }}
+{{ toYaml .Values.labels | indent 4 }}
+{{- end }}
+{{- with .Values.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
 spec:
   replicas: 1
+  revisionHistoryLimit: {{ .Values.deployment.revisionHistoryLimit }}
   selector:
-    matchLabels: {{- include "gatus.matchLabels" . | nindent 6 }}
+    matchLabels:
+      {{- include "labels.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: {{ .Values.deployment.strategy }}
   template:
     metadata:
-      name: {{ template "gatus.fullname" . }}
-      labels: {{- include "gatus.labels" . | nindent 8 }}
+      labels:
+        {{- include "labels.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+      annotations:
+        {{- if .Values.deployment.annotateConfigChecksum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- end }}
+        {{- with .Values.podAnnotations }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
-      serviceAccountName: {{ .Values.serviceAccount.name }}
-      terminationGracePeriodSeconds: 5
-      containers:
-        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          name: gatus
-          ports:
-            - containerPort: 8080
-              name: http
-              protocol: TCP
-          resources:
-            limits:
-              cpu: 250m
-              memory: 100M
-            requests:
-              cpu: 50m
-              memory: 30M
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
-          volumeMounts:
-            - mountPath: /config
-              name: config
-      volumes:
-        - configMap:
-            name: {{ template "gatus.fullname" . }}
-          name: config
+      {{- include "gatus.pod" . | nindent 6 }}

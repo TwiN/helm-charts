@@ -1,5 +1,7 @@
 # helm-charts
-Repository: https://github.com/TwiN/helm-charts
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/twin)](https://artifacthub.io/packages/search?repo=twin)
+[![Releases downloads](https://img.shields.io/github/downloads/TwiN/helm-charts/total.svg)](https://github.com/TwiN/helm-charts/releases)
+
 
 ## Add this Helm repository
 ```console
