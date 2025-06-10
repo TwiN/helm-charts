@@ -1,0 +1,18 @@
+{{- if .Values.podmonitor.create }}
+{{- if .Capabilities.APIVersions.Has "monitoring.coreos.com/v1" }}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{ template "aws-eks-asg-rolling-update-handler.name" . }}-metrics
+  namespace: {{ template "aws-eks-asg-rolling-update-handler.namespace" . }}
+  {{- with .Values.podmonitor.labels }}
+  labels: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{ template "aws-eks-asg-rolling-update-handler.labels" . }}
+  podMetricsEndpoints:
+  - port: metrics
+{{- end }}
+{{- end }}
