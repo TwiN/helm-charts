@@ -91,6 +91,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `networkPolicy.enabled`                  | Enable creation of NetworkPolicy resources                                                 | `false`                            |
 | `networkPolicy.ingress.selectors`        | List of Ingress Rule selectors                                                             | `[]`                               |
 | `config`                                 | [Gatus configuration][gatus-config]                                                        | `{}`                               |
+| `existingConfigMap`                                 | Name of an existing ConfigMap resource. If set, `config` is ignored.                                                      | `""`                               |
 
 _See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing)._
 
