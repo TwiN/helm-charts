@@ -68,6 +68,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `resources`                              | CPU/Memory resource requests/limits                                                        | `{}`                               |
 | `nodeSelector`                           | Node labels for pod assignment                                                             | `{}`                               |
 | `tolerations`                            | Tolerations for pod assignment                                                             | `[]`                               |
+| `priorityClassName`                      | PriorityClass to be used by the gatus pod                                                  | ``                                 |
 | `extraInitContainers`                    | Init containers to add to the gatus pod                                                    | `[]`                               |
 | `persistence.enabled`                    | Use persistent volume to store data                                                        | `false`                            |
 | `persistence.size`                       | Size of persistent volume claim                                                            | `200Mi`                            |

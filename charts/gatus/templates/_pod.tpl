@@ -94,6 +94,9 @@ containers:
         subPath: {{ .subPath | default "" }}
         readOnly: {{ .readOnly }}
     {{- end }}
+{{- if .Values.priorityClassName }}
+priorityClassName: {{ .Values.priorityClassName }}
+{{- end }}
 volumes:
   - name: {{ include "names.fullname" . }}-config
     configMap:
