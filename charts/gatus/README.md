@@ -47,6 +47,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `securityContext.readOnlyRootFilesystem` | Container's root filesystem is read-only                                                   | `true`                             |
 | `service.type`                           | Type of service                                                                            | `ClusterIP`                        |
 | `service.port`                           | Port for kubernetes service                                                                | `80`                               |
+| `service.portName`                       | Port name for kubernetes service                                                           | `http`                             |
 | `service.targetPort`                     | Port for container                                                                         | `8080`                             |
 | `service.annotations`                    | Service annotations                                                                        | `{}`                               |
 | `service.labels`                         | Custom labels                                                                              | `{}`                               |

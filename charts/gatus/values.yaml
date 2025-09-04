@@ -63,6 +63,7 @@ securityContext:
 service:
   type: ClusterIP
   port: 80
+  portName: http
   targetPort: 8080
   annotations: {}
   labels: {}
