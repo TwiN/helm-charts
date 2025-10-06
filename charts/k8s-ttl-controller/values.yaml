@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/twin/k8s-ttl-controller
-  tag: v1.2.0
+  tag: v1.4.0
   pullPolicy: IfNotPresent
 
 # By default no resource limit and requests will be set. 
@@ -37,3 +37,8 @@ clusterRole:
 
 clusterRoleBinding:
   create: true
+
+# Environment variables to set in the container
+env: []
+# - name: API_RESOURCES_TO_WATCH
+#   value: "pods,deployments"
