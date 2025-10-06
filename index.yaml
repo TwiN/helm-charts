@@ -460,6 +460,17 @@ entries:
     version: 0.0.1
   k8s-ttl-controller:
   - apiVersion: v2
+    created: "2025-10-06T16:12:44.224993274Z"
+    description: Annotation-based TTL controller for Kubernetes
+    digest: f2c47758924c4e7f55898ed8b8a5eb2cbcb5c2e91bca7bd9a13d7cc9009d526c
+    home: https://github.com/TwiN/k8s-ttl-controller
+    maintainers:
+    - name: TwiN
+    name: k8s-ttl-controller
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/k8s-ttl-controller-0.4.0/k8s-ttl-controller-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
     created: "2024-04-26T00:18:02.124305915Z"
     description: Annotation-based TTL controller for Kubernetes
     digest: c19d85a7af3c1dfee3085c63163498fd54eee61b2aa5c015fb453d364662071b
@@ -559,4 +570,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/lighthouse-0.0.1/lighthouse-0.0.1.tgz
     version: 0.0.1
-generated: "2025-09-16T20:56:11.584970038Z"
+generated: "2025-10-06T16:12:44.22516243Z"
