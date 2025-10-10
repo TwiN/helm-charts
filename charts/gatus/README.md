@@ -47,6 +47,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `securityContext.readOnlyRootFilesystem` | Container's root filesystem is read-only                                                   | `true`                             |
 | `service.type`                           | Type of service                                                                            | `ClusterIP`                        |
 | `service.port`                           | Port for kubernetes service                                                                | `80`                               |
+| `service.portName`                       | Port name for kubernetes service                                                           | `http`                             |
 | `service.targetPort`                     | Port for container                                                                         | `8080`                             |
 | `service.annotations`                    | Service annotations                                                                        | `{}`                               |
 | `service.labels`                         | Custom labels                                                                              | `{}`                               |
@@ -68,6 +69,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `resources`                              | CPU/Memory resource requests/limits                                                        | `{}`                               |
 | `nodeSelector`                           | Node labels for pod assignment                                                             | `{}`                               |
 | `tolerations`                            | Tolerations for pod assignment                                                             | `[]`                               |
+| `priorityClassName`                      | PriorityClass to be used by the gatus pod                                                  | ``                                 |
 | `extraInitContainers`                    | Init containers to add to the gatus pod                                                    | `[]`                               |
 | `persistence.enabled`                    | Use persistent volume to store data                                                        | `false`                            |
 | `persistence.size`                       | Size of persistent volume claim                                                            | `200Mi`                            |

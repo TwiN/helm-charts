@@ -63,6 +63,7 @@ securityContext:
 service:
   type: ClusterIP
   port: 80
+  portName: http
   targetPort: 8080
   annotations: {}
   labels: {}
@@ -146,6 +147,8 @@ nodeSelector: {}
 # Tolerations for pod assignment
 # ref: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
 tolerations: []
+
+priorityClassName: ""
 
 # Additional init containers (evaluated as template)
 # ref: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
