@@ -206,5 +206,5 @@ config:
         - "[STATUS] == 200"
         - "[BODY] == pat(*<h1>Example Domain</h1>*)"
 
-# Name of an existing ConfigMap resource. If set, `config` is ignored.
-existingConfigMap: ""
+# Name of an external ConfigMap resource. If set, `config` is ignored.
+externalConfigMap: ""
