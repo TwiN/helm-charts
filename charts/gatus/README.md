@@ -61,15 +61,15 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `ingress.extraPaths`                     | Ingress extra paths to prepend to every host                                               | `[]`                               |
 | `ingress.hosts`                          | Ingress accepted hostnames                                                                 | `["chart-example.local"]`          |
 | `ingress.tls`                            | Ingress TLS configuration                                                                  | `[]`                               |
-| `route.enabled`                          | Enables Gateway API [HTTPRoute][gateway-api]                                               | `false`                            |
-| `route.annotations`                      | HTTPRoute annotations (values are templated)                                               | `{}`                               |
-| `route.labels`                           | Custom labels                                                                              | `{}`                               |
-| `route.path`                             | Path prefix for routing                                                                    | `/`                                |
-| `route.parentRefs`                       | Parent Gateway references (required)                                                       | `[]`                               |
-| `route.hosts`                            | HTTPRoute accepted hostnames (values are templated)                                        | `["gatus.local"]`                  |
-| `route.httpsRedirect`                    | Create separate HTTPRoute for HTTP to HTTPS redirect                                       | `false`                            |
-| `route.additionalRules`                  | Additional rules to prepend before default backend rule                                    | `[]`                               |
-| `route.filters`                          | Filters to apply to the default backend rule                                               | `[]`                               |
+| `gateway.route.enabled`                  | Enables Gateway API [HTTPRoute][gateway-api]                                               | `false`                            |
+| `gateway.route.annotations`              | HTTPRoute annotations (values are templated)                                               | `{}`                               |
+| `gateway.route.labels`                   | Custom labels                                                                              | `{}`                               |
+| `gateway.route.path`                     | Path prefix for routing                                                                    | `/`                                |
+| `gateway.route.parentRefs`               | Parent Gateway references (required)                                                       | `[]`                               |
+| `gateway.route.hosts`                    | HTTPRoute accepted hostnames (values are templated)                                        | `["gatus.local"]`                  |
+| `gateway.route.httpsRedirect`            | Create separate HTTPRoute for HTTP to HTTPS redirect                                       | `false`                            |
+| `gateway.route.additionalRules`          | Additional rules to prepend before default backend rule                                    | `[]`                               |
+| `gateway.route.filters`                  | Filters to apply to the default backend rule                                               | `[]`                               |
 | `env`                                    | Extra environment variables passed to pods                                                 | `{}`                               |
 | `envFrom`                                | Additional envFrom configuration to use a Secret or a ConfigMap in an environment variable | `[]`                               |
 | `sidecarContainers`                      | Sidecar containers in the pod                                                              | `{}`                               |
