@@ -4,6 +4,7 @@ deployment:
   strategy: RollingUpdate
   annotateConfigChecksum: true
   revisionHistoryLimit: 10
+  replicas: 1
 
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-readiness-probes
 readinessProbe:
