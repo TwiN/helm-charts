@@ -29,15 +29,15 @@ spec:
     {{- tpl (toYaml .) $ | nindent 4 }}
   {{- end }}
   rules:
-    - filters:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: {{ .Values.gateway.route.path | default "/" }}
+      filters:
         - type: RequestRedirect
           requestRedirect:
             scheme: https
             statusCode: 301
-      matches:
-        - path:
-            type: PathPrefix
-            value: {{ .Values.gateway.route.path | default "/" }}
 {{- end }}
 ---
 apiVersion: {{ .Values.gateway.route.apiVersion | default "gateway.networking.k8s.io/v1" }}
