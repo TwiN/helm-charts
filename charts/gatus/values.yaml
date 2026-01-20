@@ -115,6 +115,13 @@ gateway:
       - gatus.local
     # Enable automatic HTTP to HTTPS redirect (creates a separate HTTPRoute)
     httpsRedirect: false
+    # Parent Gateway references for HTTPS redirect route (optional)
+    # If not specified, uses parentRefs. Typically should reference HTTP listener.
+    # ref: https://gateway-api.sigs.k8s.io/reference/spec/#parentreference
+    httpsRedirectParentRefs: []
+      # - name: my-gateway
+      #   namespace: gateway-system
+      #   sectionName: http
     # Additional rules to prepend before the default backend rule
     # Values can be templated
     additionalRules: []

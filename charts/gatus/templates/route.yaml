@@ -20,7 +20,7 @@ metadata:
     {{- end }}
   {{- end }}
 spec:
-  {{- with .Values.gateway.route.parentRefs }}
+  {{- with (.Values.gateway.route.httpsRedirectParentRefs | default .Values.gateway.route.parentRefs) }}
   parentRefs:
     {{- toYaml . | nindent 4 }}
   {{- end }}
