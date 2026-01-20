@@ -92,6 +92,8 @@ ingress:
   #      - gatus.local
 
 gateway:
+  # Gateway API Version
+  apiVersion: gateway.networking.k8s.io/v1
   # HTTPRoute configuration
   # ref: https://gateway-api.sigs.k8s.io/api-types/httproute/
   route:

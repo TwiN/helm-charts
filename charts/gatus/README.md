@@ -61,6 +61,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `ingress.extraPaths`                     | Ingress extra paths to prepend to every host                                               | `[]`                               |
 | `ingress.hosts`                          | Ingress accepted hostnames                                                                 | `["chart-example.local"]`          |
 | `ingress.tls`                            | Ingress TLS configuration                                                                  | `[]`                               |
+| `gateway.apiVersion`                     | Gateway API Version                                                                        | `gateway.networking.k8s.io/v1`     |
 | `gateway.route.enabled`                  | Enables Gateway API [HTTPRoute][gateway-api]                                               | `false`                            |
 | `gateway.route.annotations`              | HTTPRoute annotations (values are templated)                                               | `{}`                               |
 | `gateway.route.labels`                   | Custom labels                                                                              | `{}`                               |
