@@ -91,6 +91,49 @@ ingress:
   #    hosts:
   #      - gatus.local
 
+gateway:
+  # Gateway API Version
+  apiVersion: gateway.networking.k8s.io/v1
+  # HTTPRoute configuration
+  # ref: https://gateway-api.sigs.k8s.io/api-types/httproute/
+  route:
+    enabled: false
+    # Values can be templated
+    annotations: {}
+    labels: {}
+    # Path prefix for routing (defaults to "/")
+    path: /
+    # Parent Gateway references (required for HTTPRoute to function)
+    # ref: https://gateway-api.sigs.k8s.io/reference/spec/#parentreference
+    parentRefs: []
+      # - name: my-gateway
+      #   namespace: gateway-system
+      #   sectionName: https
+    # Hostnames for the HTTPRoute
+    # Values can be templated
+    hosts:
+      - gatus.local
+    # Enable automatic HTTP to HTTPS redirect (creates a separate HTTPRoute)
+    httpsRedirect: false
+    # Parent Gateway references for HTTPS redirect route (optional)
+    # If not specified, uses parentRefs. Typically should reference HTTP listener.
+    # ref: https://gateway-api.sigs.k8s.io/reference/spec/#parentreference
+    httpsRedirectParentRefs: []
+      # - name: my-gateway
+      #   namespace: gateway-system
+      #   sectionName: http
+    # Additional rules to prepend before the default backend rule
+    # Values can be templated
+    additionalRules: []
+    # Filters to apply to the default backend rule
+    # ref: https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional
+    filters: []
+      # - type: RequestHeaderModifier
+      #   requestHeaderModifier:
+      #     add:
+      #       - name: X-Forwarded-Proto
+      #         value: https
+
 # Extra environment variables that will be pass onto deployment pods
 # Expects key: value
 env: {}

@@ -1,0 +1,83 @@
+{{- if .Values.gateway.route.enabled -}}
+  {{- $fullName := include "names.fullname" . -}}
+  {{- $servicePort := .Values.service.port -}}
+{{- if .Values.gateway.route.httpsRedirect }}
+---
+apiVersion: {{ .Values.gateway.apiVersion | default "gateway.networking.k8s.io/v1" }}
+kind: HTTPRoute
+metadata:
+  name: {{ .Values.gateway.route.name | default $fullName }}-https-redirect
+  namespace: {{ include "names.namespace" . }}
+  labels:
+    {{- include "labels.baseLabels" . | nindent 4 }}
+    {{- with .Values.gateway.route.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- with .Values.gateway.route.annotations }}
+  annotations:
+    {{- range $key, $value := . }}
+    {{ $key }}: {{ tpl $value $ | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  {{- with (.Values.gateway.route.httpsRedirectParentRefs | default .Values.gateway.route.parentRefs) }}
+  parentRefs:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.gateway.route.hosts }}
+  hostnames:
+    {{- tpl (toYaml .) $ | nindent 4 }}
+  {{- end }}
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: {{ .Values.gateway.route.path | default "/" }}
+      filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            statusCode: 301
+{{- end }}
+---
+apiVersion: {{ .Values.gateway.apiVersion | default "gateway.networking.k8s.io/v1" }}
+kind: HTTPRoute
+metadata:
+  name: {{ .Values.gateway.route.name | default $fullName }}
+  namespace: {{ include "names.namespace" . }}
+  labels:
+    {{- include "labels.baseLabels" . | nindent 4 }}
+    {{- with .Values.gateway.route.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- with .Values.gateway.route.annotations }}
+  annotations:
+    {{- range $key, $value := . }}
+    {{ $key }}: {{ tpl $value $ | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  {{- with .Values.gateway.route.parentRefs }}
+  parentRefs:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.gateway.route.hosts }}
+  hostnames:
+    {{- tpl (toYaml .) $ | nindent 4 }}
+  {{- end }}
+  rules:
+    {{- if .Values.gateway.route.additionalRules }}
+    {{- tpl (toYaml .Values.gateway.route.additionalRules) $ | nindent 4 }}
+    {{- end }}
+    - matches:
+        - path:
+            type: PathPrefix
+            value: {{ .Values.gateway.route.path | default "/" }}
+      backendRefs:
+        - name: {{ $fullName }}
+          port: {{ $servicePort }}
+      {{- with .Values.gateway.route.filters }}
+      filters:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
