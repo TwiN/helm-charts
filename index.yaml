@@ -151,6 +151,28 @@ entries:
     version: 1.1.0
   gatus:
   - apiVersion: v2
+    appVersion: v5.34.0
+    created: "2026-02-10T22:09:27.475561394Z"
+    description: Automated service health dashboard
+    digest: b027310eb3126b3bec1cc8b808cfff4dfc45f2b5e95965992332d3c71aad5352
+    home: https://github.com/TwiN/gatus
+    icon: https://raw.githubusercontent.com/TwiN/gatus/a1c8422c2ff2b9d0a6f184c99e4dc728d3f2cd75/web/static/logo-192x192.png
+    keywords:
+    - gatus
+    - healthcheck
+    - uptime
+    - monitoring
+    maintainers:
+    - name: TwiN
+    name: gatus
+    sources:
+    - https://github.com/TwiN/helm-charts
+    - https://github.com/TwiN/gatus
+    type: application
+    urls:
+    - https://github.com/TwiN/helm-charts/releases/download/gatus-1.5.0/gatus-1.5.0.tgz
+    version: 1.5.0
+  - apiVersion: v2
     appVersion: v5.27.2
     created: "2026-01-20T20:56:04.486685477Z"
     description: Automated service health dashboard
@@ -636,4 +658,4 @@ entries:
     urls:
     - https://github.com/TwiN/helm-charts/releases/download/lighthouse-0.0.1/lighthouse-0.0.1.tgz
     version: 0.0.1
-generated: "2026-01-20T20:56:04.486934841Z"
+generated: "2026-02-10T22:09:27.475791551Z"
