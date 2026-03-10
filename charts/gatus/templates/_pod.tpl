@@ -54,8 +54,10 @@ containers:
     {{- end }}
     {{- end }}
     envFrom:
+      {{- if not .Values.externalConfigSecret }}
       - configMapRef:
           name: {{ include "names.fullname" . }}
+      {{- end }}
       {{- if .Values.secrets }}
       - secretRef:
           name: {{ include "names.fullname" . }}
