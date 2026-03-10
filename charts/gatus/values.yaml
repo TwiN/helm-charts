@@ -250,4 +250,9 @@ config:
         - "[BODY] == pat(*<h1>Example Domain</h1>*)"
 
 # Name of an external ConfigMap resource. If set, `config` is ignored.
+# configmap key must be named config.yaml
 externalConfigMap: ""
+
+# Name of an external Secret resource. If set, `config` is ignored.
+# secret key must be named config.yaml
+externalConfigSecret: ""

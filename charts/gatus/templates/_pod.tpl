@@ -99,8 +99,13 @@ priorityClassName: {{ .Values.priorityClassName }}
 {{- end }}
 volumes:
   - name: {{ include "names.fullname" . }}-config
+    {{- if .Values.externalConfigSecret }}
+    secret:
+      secretName: {{ .Values.externalConfigSecret }}
+    {{- else }}
     configMap:
       name: {{ .Values.externalConfigMap | default (include "names.fullname" .) }}
+    {{- end }}
   {{- if .Values.persistence.enabled }}
   - name: {{ include "names.fullname" . }}-data
     persistentVolumeClaim:

@@ -1,4 +1,4 @@
-{{ if not .Values.externalConfigMap }}
+{{ if and (not .Values.externalConfigMap) (not .Values.externalConfigSecret) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
