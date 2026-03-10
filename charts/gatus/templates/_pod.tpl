@@ -58,7 +58,7 @@ containers:
       - configMapRef:
           name: {{ include "names.fullname" . }}
       {{- end }}
-      {{- if .Values.secrets }}
+      {{- if or .Values.secrets .Values.externalConfigSecret }}
       - secretRef:
           name: {{ include "names.fullname" . }}
       {{- end }}

@@ -105,6 +105,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `networkPolicy.ingress.selectors`        | List of Ingress Rule selectors                                                             | `[]`                               |
 | `config`                                 | [Gatus configuration][gatus-config]                                                        | `{}`                               |
 | `externalConfigMap`                      | Name of an external ConfigMap resource. If set, `config` is ignored.                       | `""`                               |
+| `externalConfigSecret`                   | Name of an external Secret resource. If set, `config` is ignored.                          | `""`                               |
 
 _See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing)._
 
