@@ -58,9 +58,13 @@ containers:
       - configMapRef:
           name: {{ include "names.fullname" . }}
       {{- end }}
-      {{- if or .Values.secrets .Values.externalConfigSecret }}
+      {{- if .Values.secrets }}
       - secretRef:
           name: {{ include "names.fullname" . }}
+      {{- end }}
+      {{- with .Values.externalConfigSecret }}
+      - secretRef:
+          name: {{ . }}
       {{- end }}
       {{- if .Values.envFrom }}
       {{- toYaml .Values.envFrom | nindent 6 }}
