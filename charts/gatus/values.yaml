@@ -241,6 +241,7 @@ networkPolicy:
 # Gatus configuration
 # ref: https://github.com/TwiN/gatus#configuration
 config:
+  immutable: false
   endpoints:
     - name: example
       url: https://example.org
