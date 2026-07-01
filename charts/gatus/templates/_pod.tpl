@@ -68,12 +68,18 @@ containers:
       httpGet:
         path: /health
         port: http
+        {{- if hasKey .Values.readinessProbe "scheme" }}
+        scheme: {{ .Values.readinessProbe.scheme }}
+        {{- end }}
     {{- end }}
     {{- if .Values.livenessProbe.enabled }}
     livenessProbe:
       httpGet:
         path: /health
         port: http
+        {{- if hasKey .Values.livenessProbe "scheme" }}
+        scheme: {{ .Values.livenessProbe.scheme }}
+        {{- end }}
     {{- end }}
     resources:
       {{- toYaml .Values.resources | nindent 6 }}

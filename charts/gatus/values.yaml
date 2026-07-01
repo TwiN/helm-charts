@@ -8,10 +8,16 @@ deployment:
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-readiness-probes
 readinessProbe:
   enabled: true
+  # scheme must be set to HTTPS when web.tls.certificate-file and web.tls.private-key-file are set
+  # the default is to use HTTP
+  # scheme: HTTPS
 
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-a-liveness-http-request
 livenessProbe:
   enabled: true
+  # scheme must be set to HTTPS when web.tls.certificate-file and web.tls.private-key-file are set
+  # the default is to use HTTP
+  # scheme: HTTPS
 
 image:
   repository: twinproduction/gatus

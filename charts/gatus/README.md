@@ -24,7 +24,9 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `deployment.strategy`                    | Deployment strategy                                                                        | `RollingUpdate`                    |
 | `deployment.annotateConfigChecksum`      | Restart pod when config changed                                                            | `true`                             |
 | `readinessProbe.enabled`                 | Enable readiness probe                                                                     | `true`                             |
+| `readinessProbe.scheme`                  | Scheme for probe (HTTP or HTTPS)                                                           | ``                                 |
 | `livenessProbe.enabled`                  | Enable liveness probe                                                                      | `true`                             |
+| `livenessProbe.scheme`                   | Scheme for probe (HTTP or HTTPS)                                                           | ``                                 |
 | `image.repository`                       | Image repository                                                                           | `twinproduction/gatus`             |
 | `image.tag`                              | Overrides the Gatus image tag                                                              | ``                                 |
 | `image.sha`                              | Image sha                                                                                  | ``                                 |
