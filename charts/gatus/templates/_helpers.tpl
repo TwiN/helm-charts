@@ -40,6 +40,19 @@ Usage: {{ include "names.namespace" . }}
 {{- end -}}
 
 {{/*
+Name of the ConfigMap
+Usage: {{ include "names.configMap" . }}
+*/}}
+{{- define "names.configMap" }}
+  {{- $suffix := "" }}
+  {{- if .Values.config.immutable }}
+    {{- $suffix = (.Values.config | toYaml | sha256sum | trunc 7) }}
+    {{- $suffix = printf "-%s" $suffix }}
+  {{- end }}
+  {{- printf "%s%s" (include "names.fullname" .) $suffix | trunc 63 | trimSuffix "-" -}}
+{{- end }}
+
+{{/*
 Name of the ServiceAccount
 Usage: {{ include "names.serviceAccountName" . }}
 */}}

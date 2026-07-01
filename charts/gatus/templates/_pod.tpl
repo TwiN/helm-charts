@@ -1,4 +1,7 @@
 {{- define "gatus.pod" -}}
+
+{{- $configMapName := .Values.externalConfigMap | default (include "names.configMap" .) }}
+
 {{- if .Values.hostNetwork.enabled }}
 hostNetwork: true
 {{- end }}
@@ -55,7 +58,7 @@ containers:
     {{- end }}
     envFrom:
       - configMapRef:
-          name: {{ include "names.fullname" . }}
+          name: {{ $configMapName }}
       {{- if .Values.secrets }}
       - secretRef:
           name: {{ include "names.fullname" . }}
@@ -100,7 +103,7 @@ priorityClassName: {{ .Values.priorityClassName }}
 volumes:
   - name: {{ include "names.fullname" . }}-config
     configMap:
-      name: {{ .Values.externalConfigMap | default (include "names.fullname" .) }}
+      name: {{ $configMapName }}
   {{- if .Values.persistence.enabled }}
   - name: {{ include "names.fullname" . }}-data
     persistentVolumeClaim:
