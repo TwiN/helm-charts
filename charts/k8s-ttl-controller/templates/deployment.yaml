@@ -18,7 +18,9 @@ spec:
       automountServiceAccountToken: true
       serviceAccountName: {{ .Values.serviceAccount.name }}
       restartPolicy: Always
-      dnsPolicy: Default
+      {{- if .Values.dnsPolicy }}
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      {{- end }}
       containers:
         - name: k8s-ttl-controller
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
