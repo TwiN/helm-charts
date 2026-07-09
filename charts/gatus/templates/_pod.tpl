@@ -54,11 +54,17 @@ containers:
     {{- end }}
     {{- end }}
     envFrom:
+      {{- if not .Values.externalConfigSecret }}
       - configMapRef:
           name: {{ include "names.fullname" . }}
+      {{- end }}
       {{- if .Values.secrets }}
       - secretRef:
           name: {{ include "names.fullname" . }}
+      {{- end }}
+      {{- with .Values.externalConfigSecret }}
+      - secretRef:
+          name: {{ . }}
       {{- end }}
       {{- if .Values.envFrom }}
       {{- toYaml .Values.envFrom | nindent 6 }}
@@ -99,8 +105,13 @@ priorityClassName: {{ .Values.priorityClassName }}
 {{- end }}
 volumes:
   - name: {{ include "names.fullname" . }}-config
+    {{- if .Values.externalConfigSecret }}
+    secret:
+      secretName: {{ .Values.externalConfigSecret }}
+    {{- else }}
     configMap:
       name: {{ .Values.externalConfigMap | default (include "names.fullname" .) }}
+    {{- end }}
   {{- if .Values.persistence.enabled }}
   - name: {{ include "names.fullname" . }}-data
     persistentVolumeClaim:
