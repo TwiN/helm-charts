@@ -2,6 +2,13 @@
 {{- if .Values.hostNetwork.enabled }}
 hostNetwork: true
 {{- end }}
+{{- if .Values.dnsPolicy.enabled}}
+dnsPolicy: {{ .Values.dnsPolicy.policy }}
+{{- end }}
+{{- if .Values.dnsConfig.enabled}}
+dnsConfig: 
+  {{ toYaml .Values.dnsConfig.config | nindent 2 }}
+{{- end }}
 {{- if .Values.image.pullSecrets }}
 imagePullSecrets:
   {{- range .Values.image.pullSecrets }}

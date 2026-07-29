@@ -29,6 +29,18 @@ image:
 hostNetwork:
   enabled: false
 
+dnsPolicy: 
+  # enable overwrite
+  enabled: false
+  # see https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
+  policy: "Default"
+
+dnsConfig: 
+  # enable overwrite
+  enabled: false
+  # see https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
+  config: {}
+
 # Additional deployment annotations
 annotations: {}
 

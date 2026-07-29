@@ -31,6 +31,10 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 | `image.pullPolicy`                       | Image pull policy                                                                          | `IfNotPresent`                     |
 | `image.pullSecrets`                      | Image pull secrets                                                                         | `{}`                               |
 | `hostNetwork.enabled`                    | Enable host network mode                                                                   | `false`                            |
+| `dnsPolicy.enabled`.                     | Enable control of the dnsPolicy                                                            | `false`                            |
+| `dnsPolicy.policy`.                      | Pod DNS Policy.                                                                            | `Default`                          |
+| `dnsConfig.enabled`.                     | Enable control of the dnsConfig property of the Pod                                        | `false`                            |
+| `dnsConfig.config`.                      | Pod dnsConfig                                                                              | `{}`                               |
 | `annotations`                            | Deployment annotations                                                                     | `{}`                               |
 | `labels`                                 | Deployment labels                                                                          | `{}`                               |
 | `podAnnotations`                         | Pod annotations                                                                            | `{}`                               |
