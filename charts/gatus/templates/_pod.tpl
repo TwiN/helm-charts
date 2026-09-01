@@ -53,9 +53,8 @@ containers:
     {{- end }}
     {{- end }}
     {{- end }}
+    {{- if or .Values.secrets .Values.envFrom }}
     envFrom:
-      - configMapRef:
-          name: {{ include "names.fullname" . }}
       {{- if .Values.secrets }}
       - secretRef:
           name: {{ include "names.fullname" . }}
@@ -63,6 +62,7 @@ containers:
       {{- if .Values.envFrom }}
       {{- toYaml .Values.envFrom | nindent 6 }}
       {{- end }}
+    {{- end }}
     {{- if .Values.readinessProbe.enabled }}
     readinessProbe:
       httpGet:
